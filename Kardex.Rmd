@@ -1,0 +1,29 @@
+---
+title: "kardex"
+author: "Jose Francisco García Carmona"
+date: "29 de agosto de 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Primer semestre
+- Matemáticas básicas  7
+- Problemas de matemáticas básicas  7
+- Conceptos de cálculo  8
+- Programación actuarial I  9
+- Introducción a la profesión actuarial 10
+- DHPC  8
+
+## Segundo Semestre
+- Cálculo diferencial  6
+- Progrmación actuarial II  6
+- Microeconomía  8
+- Teoría del interés I  8
+- Teoría de ecuaciones  10
+- Geometría analítica  10
+
+
+
