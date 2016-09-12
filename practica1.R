@@ -20,3 +20,4 @@ if(z<3){ varu <- varu +1}
 varu
 vart<-100-varu
 vart
+
