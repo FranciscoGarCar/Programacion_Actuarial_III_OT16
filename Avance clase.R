@@ -2,6 +2,7 @@
 
 #crear vectores
 x <- vector(mode ="numeric",length=5L)
+x
 
 #Crear vectores con la funcion C
 x <- c(0.5,0.6)
@@ -147,5 +148,122 @@ dimnames(m1)<- list(c(1,2,3,4,5), c("a","b","c","d","e","f"))
  getwd()
  setwd("~/GitHub/Programacion_Actuarial_III_OT16")
  data<- read.csv("table.csv")
- data<-read.table("table.csv",T,",")
- data
+ data<-read.table("table.csv",T,",",nrows=100)
+ clases<-sapply(data,class)
+ data<- readtable("table.csv",T,",",colClasses=clases)
+ clases
+ 
+ #uso de dput y dget
+ y<- data.frame(a=1, b="a")
+ dput(y)
+ dput(y,file="y.R")
+ nueva.y<- dget("y.R")
+ y
+ nueva.y
+ 
+ x<-"programacion actuarial 3"
+ y<- data.frame(a=1,b="a")
+ dump(c("x","y"), file("data.R"))
+ rm(x,y)
+ x
+ y
+ source("data.R")
+ 
+ p<-head(airquality)
+ dump(c("p"),file="airquality.R")
+ p
+ 
+ con<- url("http://www.fcfm.buap.mx/", "r")
+  x<- readLines(con,7)
+  x
+
+#creamos un vector
+  x<- c("a","b","c","c","d","e")
+  x
+  #extraemos elementos con []
+  x[1]
+  x[2]
+  #tambien podemos extraer en secuencia
+  x[1:4]
+  #extraer elementos con restriccion
+  x[x>"b"]
+  #equivalente a un vector logico
+  u<- x=="c"
+  u
+  x[u]
+  
+#lista
+  x<-list(foo=1:4, bar=0.6)
+  #primer elemento de la lista
+  x[1]
+  #extraemos nuevamente el dato de la lista en si
+  x[[1]]
+  #por nombre
+  x["bar"]
+  x[["bar"]]
+  x$foo[2]
+  
+  #lista de 3 elementos
+  
+  x<- list(foo=1:4, bar=0.6, baz="Hola")
+  x[[c(1,4)]]
+  
+  x<- matrix(1:6,2,3)
+  x
+ x[1,2]
+ x[1,2, drop=FALSE]
+ x[1, ,drop=FALSE] 
+ x<- list(aardvark= 1:5)
+ x[1]
+ x[[1]]
+ x$a
+ x[["a"]]
+ x[["a", exact=FALSE]]
+ 
+ #Valores faltantes
+ airquality[1:6,]
+ completos<-complete.cases(airquality)
+airquality[completos,]
+ airquality[1:6,][completos,]
+ airquality[completos,][1:6,]
+ x<- matrix(1:4,2,2); y<-matrix(rep(10,4),2,2)
+ x*y
+ x%*%y
+ 
+ 
+ #ciclos
+ x<-matrix(1:6,2,3)
+ x
+ for (i in 1:ncol(x)) {print(x[2*i-1])}
+ for (i in 1:ncol(x)) {print(x[2*i])}
+ 
+ for(i in seq_Len(nrow(x))){
+   for (j in seq_Len(ncol(x)))}{
+     print(x[i,j])}
+ 
+ s<-0
+ for (i in 1:100) {print(z)
+ z<-5  
+ a<-0
+ while (z>=3 && z<=10){
+   print (z)
+   a<-a+1
+   #caminata<- c(caminata,z)
+  
+   moneda<- rbinom(1,1,0.5)
+   
+   if (moneda==1){
+     z<- z+1
+    
+    } else {
+      z<-z-1
+    
+    }
+   #caminata<-vector(mode="numeric", length = a)
+  #caminata[a]<-z
+  #print(caminata)
+ }
+ }
+ 
+ 
+  
