@@ -265,5 +265,39 @@ airquality[completos,]
  }
  }
  
+ #funciones
+ suma2<<- function(x,y){
+   x+y
+ }
  
+mayor10<- function(x) {
+  x[x>10]
+}
+mayor10(1:30)
+
+mayorque<- function(x,n){
+  x[x>n]
+}
+promedioCol<-function(x,quitar.NA=T){
+  nc<- ncol(x)
+  medias<-vector("numeric",nc)
+  for (i in 1:nc){
+    medias[i]<- mean(x[ ,i],na.rm=quitar.NA)
+  }
+  medias
+}
+#evaluacionperezosa
+f<-function(a,b){
+  a^2+b
+  }
+f(2,1)
+
+myplot<-function(x,y,type="l", ...){
+  plot(x,y,type=type, ...)
+}
+paste<- function(..., sep, collapse= NULL)
+  
+  
+
+
   
