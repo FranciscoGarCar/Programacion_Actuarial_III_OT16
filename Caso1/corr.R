@@ -37,8 +37,8 @@ corr<- function(directorio="~/GitHub/Programacion_Actuarial_III_OT16/specdata/sp
       }
       
     }
-   promedios=sulf/suma1
-   promedion=nitr/suma1
+   promedios<-sulf/suma1
+   promedion<-nitr/suma1
    sulf1<-0
    nitr1<-0
    suni<-0
